@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang='en-us'>
+	<head>
+		<title>nagen v1</title>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+
+			.column {
+			  float: left;
+			  width: 50%;
+			  padding: 10px;
+			}
+			
+			.file {
+			  color:#4444cc;
+			  cursor: pointer;
+			}
+			
+			.download {
+			  cursor: pointer;
+			}
+		</style>
+		<script type='application/javascript' src='nagen.js'></script>
+		<script type='application/javascript'>
+			FS.mkdir('generated')
+			var generateWav = Module.cwrap('generate_wav', null, ['string'])
+			var lastUsedFileId = 0
+			
+			var updateFileList = function() {
+				let files = []
+				for (let id of FS.readdir('/generated/')) {
+					if (id == '.' || id == '..')
+						continue
+					for (let fileName of FS.readdir('/generated/' + id)) {
+						if (fileName == '.' || fileName == '..')
+							continue
+						let file = {name: fileName, fullName: '/generated/' + id + '/' + fileName}
+						files.push(file)
+					}
+				}
+				
+				let fileList = document.getElementById('fileList')
+				fileList.textContent = '' 
+				for (let file of files) {
+					let li   = document.createElement('li')
+					fileList.appendChild(li)
+					
+					let textBeforeDownloadLink = document.createTextNode('[')
+					li.appendChild(textBeforeDownloadLink)
+					
+					let spanDownload = document.createElement('span')
+					li.appendChild(spanDownload)
+					spanDownload.textContent = '\u2B73'
+					spanDownload.onclick    = function() { downloadWav(file.name, file.fullName) }
+					spanDownload.className   = 'download'
+					
+					let textAfterDownloadLink = document.createTextNode('] ')
+					li.appendChild(textAfterDownloadLink)
+					
+					let spanPlay = document.createElement('span')
+					li.appendChild(spanPlay)
+					spanPlay.textContent = file.name
+					spanPlay.onclick     = function() { playWav(file.fullName) }
+					spanPlay.className   = 'file'
+				}
+			}
+			
+			var playWav = function(fullName) {
+				let bytes = FS.readFile(fullName) 
+				let context = new AudioContext()
+				context.decodeAudioData(bytes.buffer).then(function(buffer) {
+					let source = context.createBufferSource()
+					source.buffer = buffer
+					source.connect(context.destination)
+					source.start(0)
+				})
+			}
+			
+			var downloadWav = function(fileName, fullName) {
+				let bytes = FS.readFile(fullName)
+				let a = document.createElement('a');
+				a.download = fileName;
+				a.href = URL.createObjectURL(new Blob([bytes], {type: 'application/octet-stream'}));
+				a.style.display = 'none';
+				document.body.appendChild(a);
+				a.click();
+				setTimeout(() => {
+					document.body.removeChild(a);
+					URL.revokeObjectURL(a.href);
+				}, 2000);
+			}
+			
+			var onGenerateWavClicked = function() {
+				let fileName = document.getElementById('fileName').value.trim()
+				let forbiddenChars = '/\<>:"|?*'
+				for (let c of forbiddenChars) {
+					if (fileName.includes(c)) {
+						alert('Please don\'t use the following symbols in file name:\n' + forbiddenChars)
+						return
+					}
+				}
+				let description = document.getElementById('description').value.trim()
+				FS.writeFile('description.txt', description)
+				let fileId = ++lastUsedFileId
+				let fileDir = 'generated/' + fileId + '/'
+				FS.mkdir(fileDir)
+				let fullName = fileDir + fileName + '.wav'
+				generateWav(fullName)
+				updateFileList()
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<h3>NES Audio Generator v1</h3>
+			<div class='column' style='background-color:#ccffcc;'>
+				File name to generate:
+				<input type='text' id='fileName'>
+				<br/>
+				NES audio description
+				<br/>
+				<textarea id='description' rows='16' style='width:100%'></textarea>
+				<br/><br/>
+				<button type='button' onclick='onGenerateWavClicked()'>Generate wav file</button> 
+			</div>
+		<div>
+			<div class='column' style='background-color:#ccccff;'>
+				Generated files:
+				<ul id='fileList'>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
