@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" type="image/jpeg" href="cwp.jpg">
+		<title>CatNose Chiptune Web-Player</title>
+		<link rel='stylesheet' href='style.css'>
+		<script src='video_db.js'></script>
+		<script src='track_table.js'></script>
+		<script src='video_combobox.js'></script>
+		<script src='tools.js'></script>
+		<script src='play_controller.js'></script>
+		<script src='cookies.js'></script>
+		<script src='main.js'></script>
+		<script src='time.js'></script>
+		<script src='player.js'></script>
+	</head>
+	<body>
+		<span id='init'>
+			Please click on youtube player play button to start.<br/>
+			If something doesn't work, please try a different browser (chromius-based, for example).<br/>
+		</span>
+		<div id='player'></div>
+		<span id='ui' hidden>
+			<br><br>
+			<button type='button' title='Video settings' onclick='toggleSettings()'>⚙</button> 
+			Video: <select id='video'></select>
+			
+			<p></p>
+			<button type='button' title='Previous track' onclick='prev()'>◀</button>
+			<button type='button' title='Play/pause' id='playpause' onclick='playPause()'>▷</button>
+			<button type='button' title='Next track' onclick='next()'>▶</button>
+			&nbsp;
+			<button type='button' title='Loop' onclick='toggleLoop()' id='loop'>ထ</button>
+			<button type='button' title='Random' onclick='toggleRandom()' id='random'>🎲</button>
+			&nbsp;
+			<button type='button' title='Play all videos' onClick='toggleAll()' id='all'>🗃️</button>
+			
+			<br>
+			Position:
+			<input class='position' type="range" min='0' max='100' step='0.1' value='0' oninput='onPositionInput()' onchange='onPositionChange()' id='pos'/>
+			
+			<br>
+			Volume:
+			<input class='volume' type="range" min='0' max='100' step='0.1' value='100' oninput='setVolume()' id='volume'/>
+			
+			<span id='settings' hidden>
+				<br><br>
+				<button type='button' style='margin-bottom: 2pt;' onclick='exportSettings()'>⤒ Export tracks settings</button>
+				<button type='button' style='margin-bottom: 2pt;' onclick='importSettings()'>⤓ Import tracks settings</button>
+				<table id='tracks'></table>
+			</span>
+		</span>
+	</body>
+</html>

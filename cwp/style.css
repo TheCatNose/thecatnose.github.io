@@ -1,0 +1,37 @@
+table, td, th {
+	border: 1px solid #bbbbbb;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.highlight > td { background: #bbffbb;}
+
+button {
+	line-height: 1.2em;
+	border-radius: 3px;
+	border: 1px solid #bbbbbb;
+}
+
+button:hover {
+	background-color: #dddddd;
+}
+
+button.pressed {
+	background-color: #999999;
+}
+
+button.pressed:hover {
+	background-color: #888888;
+}
+
+input.position {
+	width: 188pt;
+	margin-top: 5pt;
+}
+
+input.volume {
+	width: 94pt;
+	margin-top: 5pt;
+}
