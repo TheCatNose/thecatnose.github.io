@@ -536,6 +536,17 @@ class VideoDb {
 		vid.add('32:47', "Firage - Galaxy Hero")
 		vid.add('34:55', "Siren - Jack of Spades")
 		vid.add('36:39', "malmen and motherchip - thousand sunflowers")
+
+		vid = new Video('Best of Modarchive 2013', 'boma-2013', 'GbiwyqpVmPU')
+		col.add(vid)
+		vid.add('00:00', "LHS - Angel LHS Remix")
+		vid.add('02:35', "FearofDark - NOISECHAN INSPECTION TEAM: On The Case")
+		vid.add('05:39', "DNA-Groove - Pocket Tanks (intro)")
+		vid.add('08:14', "Naula - Huipentuja")
+		vid.add('10:01', "beek - pleiadeans")
+		vid.add('12:16', "joule & malmen - one way heart")
+		vid.add('15:14', "radix - dragon atlas")
+		vid.add('17:40', "wasp - retrobution")
 		
 		// ---------------------------------------------------------------------------------------------------- MONTHLY
 		
