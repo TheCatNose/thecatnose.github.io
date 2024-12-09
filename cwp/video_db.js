@@ -553,6 +553,10 @@ class VideoDb {
 		col = new VideoCollection('Best of Modarchive: Monthly')
 		this.collections.push(col)
 		
+		vid = new Video('Best of Modarchive November 2024', 'boma-2024-11', 'N-2WSMUScNA')
+		col.add(vid)
+		vid.add('00:00', "tempest - astrovandalism")
+		
 		vid = new Video('Best of Modarchive September 2024', 'boma-2024-09', 'GxL2dRtP4r8')
 		col.add(vid)
 		vid.add('00:00', "Viraxor - nftpundarn keygen #7")
