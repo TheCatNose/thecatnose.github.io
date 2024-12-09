@@ -83,7 +83,7 @@ class PlayController {
 		}
 	}
 	
-	next() {
+	next(force = false) {
 		let generated = this._generateNewPlaylist()
 		let originalPlaylistIndex = this.playlistIndex
 		if (generated) { // This is new playlist, so don't skip current playlist index
@@ -92,9 +92,8 @@ class PlayController {
 		while(true) {
 			this.playlistIndex++
 			if (this.playlistIndex >= this.playlist.length) {
-				if (this.mode.loop) {
-					this.playlistIndex = 0
-				} else {
+				this.playlistIndex = 0
+				if (!this.mode.loop && !force) {
 					this.playlistEnded = true
 					return
 				}

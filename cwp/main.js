@@ -7,9 +7,14 @@ function onYouTubeIframeAPIReady() {
 	player.addPositionChangedListener(this.onTrackPositionChanged.bind(this))
 	ctl = new PlayController(player)
 	ctl.setOnTrackStarted(this.onTrackStartedByController.bind(this))
-	ctl.setLoop     ( Cookies.getBool('player.loop'     ) )
-	ctl.setRandom   ( Cookies.getBool('player.random'   ) )
-	ctl.setAllVideos( Cookies.getBool('player.allVideos') )
+	
+	if (Cookies.getBool('player.loop'))
+		toggleLoop()
+	if (Cookies.getBool('player.random'))
+		toggleRandom()
+	if (Cookies.getBool('player.allVideos'))
+		toggleAll()
+	
 	ctl.setVideo(VideoCombobox.currentVideo())
 }
 
@@ -87,7 +92,7 @@ function prev() {
 }
 
 function next() {
-	ctl.next()
+	ctl.next(true)
 }
 
 function toggleLoop() {
