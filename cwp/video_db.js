@@ -548,6 +548,32 @@ class VideoDb {
 		vid.add('15:14', "radix - dragon atlas")
 		vid.add('17:40', "wasp - retrobution")
 		
+		vid = new Video('Best of Modarchive 2012', 'boma-2012', 'nXCp9fVNP1w')
+		col.add(vid)
+		vid.add('00:00', 'LHS - Black Riders keygen')
+		vid.add('01:13', 'Jakim - Top Hat Main Theme')
+		vid.add('03:50', 'oxbow - artcore-hidden')
+		vid.add('04:59', 'wonderboy - my south west')
+		vid.add('06:48', 'seablue - aurora dawn')
+		vid.add('09:09', 'cerror & xylo - Dans la rue')
+		vid.add('11:53', 'radix and xyce - Rainbow Dash')
+		
+		vid = new Video('Best of Modarchive 2011', 'boma-2011', 'iUaFs9Un6XQ')
+		col.add(vid)
+		vid.add('00:00', 'hi-lite - purple shades')
+		vid.add('01:24', 'LHS - Horizon Skies')
+		vid.add('03:20', 'ReZ - Delta (remix)')
+		vid.add('04:52', 'pink - alloy run')
+		vid.add('06:48', 'beek and virt - fruitbat')
+		vid.add('11:11', 'beek - margarita')
+		vid.add('13:31', 'daXX - The unknown stuntman (remix)')
+		vid.add('14:47', 'Mazedude - Slick Rippin Keen (remix)')
+		vid.add('19:10', 'cerror - bagger')
+		vid.add('20:48', 'malmen - sun rocket')
+		vid.add('24:06', 'Rez - Monday')
+		vid.add('25:17', 'malmen - nothing can stop us')
+		vid.add('28:11', 'malmen and retro - citrus paradisi')
+		
 		// ---------------------------------------------------------------------------------------------------- MONTHLY
 		
 		col = new VideoCollection('Best of Modarchive: Monthly')
