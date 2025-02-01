@@ -574,6 +574,14 @@ class VideoDb {
 		vid.add('25:17', 'malmen - nothing can stop us')
 		vid.add('28:11', 'malmen and retro - citrus paradisi')
 		
+		vid = new Video('Best of Modarchive 2010', 'boma-2010', 'U3jh2rx1U30')
+		col.add(vid)
+		vid.add('00:00', 'ko0x - caramel condition')
+		vid.add('03:00', 'FearofDark - Sleigh Ride Cover')
+		vid.add('06:49', 'radix - feng shui schematics')
+		vid.add('08:54', "FearofDark - Rollin' Down the Street In My Katamari")
+		vid.add('13:31', 'malmen & joule - tomorrow without you')
+		
 		// ---------------------------------------------------------------------------------------------------- MONTHLY
 		
 		col = new VideoCollection('Best of Modarchive: Monthly')
