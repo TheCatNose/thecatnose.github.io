@@ -587,6 +587,12 @@ class VideoDb {
 		col = new VideoCollection('Best of Modarchive: Monthly')
 		this.collections.push(col)
 		
+		vid = new Video('Best of Modarchive January 2025', 'boma-2025-01', 'ylM75a6f6oM')
+		col.add(vid)
+		vid.add('00:00', "dizzy - santa claustrofobia")
+		vid.add('02:16', "cerror - sarge")
+		vid.add('04:42', "zalza - salvatore blues")
+		
 		vid = new Video('Best of Modarchive November 2024', 'boma-2024-11', 'N-2WSMUScNA')
 		col.add(vid)
 		vid.add('00:00', "tempest - astrovandalism")
