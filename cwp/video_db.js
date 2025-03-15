@@ -114,6 +114,19 @@ class VideoDb {
 		return this.collections[index]
 	}
 	
+	static findById(id) {
+		for (let c = 0; c < this.collectionCount(); c++) {
+			let collection = this.collections[c]
+			for (let v = 0; v < collection.videoCount(); v++) {
+				let video = collection.getVideo(v)
+				if (video.getId() == id) {
+					return video
+				}
+			}
+		}
+		return null
+	}
+	
 	static saveSettings() {
 		let settings = { 'version': 1 }
 		for (let c = 0; c < this.collectionCount(); c++) {

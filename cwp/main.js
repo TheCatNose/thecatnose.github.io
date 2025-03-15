@@ -1,8 +1,21 @@
 var player = null
 var ctl = null
 
+function getVideoSpecifiedByUrl() {
+	let params = new URLSearchParams(window.location.search)
+	let id = params.get('video')
+	return VideoDb.findById(id)
+}
+
+function cleanupUrl() {
+	window.history.replaceState(null, '', window.location.pathname);
+}
+
 function onYouTubeIframeAPIReady() {
-	player = new Player('player', onPlayerInitialized)
+	let video = getVideoSpecifiedByUrl()
+	cleanupUrl()
+	
+	player = new Player('player', video, onPlayerInitialized)
 	player.addTrackStateEventListener(this.onTrackStateChanged.bind(this))
 	player.addPositionChangedListener(this.onTrackPositionChanged.bind(this))
 	ctl = new PlayController(player)
@@ -12,7 +25,7 @@ function onYouTubeIframeAPIReady() {
 		toggleLoop()
 	if (Cookies.getBool('player.random'))
 		toggleRandom()
-	if (Cookies.getBool('player.allVideos'))
+	if (Cookies.getBool('player.allVideos') && video == null)
 		toggleAll()
 	
 	ctl.setVideo(VideoCombobox.currentVideo())
@@ -69,6 +82,14 @@ function init() {
 	TrackTable.onModeChanged = onModeChanged
 	VideoCombobox.onVideoSelected = onVideoSelected
 	VideoCombobox.init()
+	
+	let video = getVideoSpecifiedByUrl()
+	if (video != null) {
+		VideoCombobox.selectVideo(video)
+		TrackTable.initByVideo(video)
+		document.title = video.getTitle()
+		toggleSettings()
+	}
 }
 
 document.addEventListener('DOMContentLoaded', init);

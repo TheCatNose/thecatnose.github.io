@@ -13,13 +13,13 @@ class Player {
 		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 	}
 	
-	constructor(playerId, onInitialized) {
+	constructor(playerId, video, onInitialized) {
 		this.onInitialized = onInitialized
 		this.initialized = false
 		this.trackState = TrackState.Ended
 		this.trackStateListeners = []
 		this.positionChangedListeners = []
-		this.video = VideoDb.getCollection(0).getVideo(0)
+		this.video = video ?? VideoDb.getCollection(0).getVideo(0)
 		this.yt = new YT.Player('player', {
 			height: '180',
 			width: '320',
