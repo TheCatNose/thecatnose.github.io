@@ -587,6 +587,10 @@ class VideoDb {
 		col = new VideoCollection('Best of Modarchive: Monthly')
 		this.collections.push(col)
 		
+		vid = new Video('Best of Modarchive February 2025', 'boma-2025-02', 'Z-Xw3oiJYIY')
+		col.add(vid)
+		vid.add('00:00', "wild kitten (orig. by Atsuyoshi Isemura)")
+		
 		vid = new Video('Best of Modarchive January 2025', 'boma-2025-01', 'ylM75a6f6oM')
 		col.add(vid)
 		vid.add('00:00', "dizzy - santa claustrofobia")
