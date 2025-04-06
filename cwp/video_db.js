@@ -595,6 +595,19 @@ class VideoDb {
 		vid.add('08:54', "FearofDark - Rollin' Down the Street In My Katamari")
 		vid.add('13:31', 'malmen & joule - tomorrow without you')
 		
+		vid = new Video('Best of Modarchive 2009', 'boma-2009', 'pUKiah7t0VQ')
+		col.add(vid)
+		vid.add('00:00', 'mrdeath - Oldschool Combat 3')
+		vid.add('02:01', 'joule and ko0x - caroline in neon hot pants')
+		vid.add('04:12', 'reed - eclipse (subsong 1)')
+		vid.add('06:21', 'joule and coda - gOing nuts')
+		vid.add('09:22', 'FearofDark - Dancing On the M%n')
+		vid.add('14:21', 'joule and malmen - tease or please')
+		vid.add('17:20', 'vincenzo - reloaded intro music')
+		vid.add('19:24', 'FearofDark - Get A Brian Morans')
+		vid.add('23:41', 'zalza and floppi - snowman')
+		vid.add('25:40', 'malmen - flowers')
+		
 		// ---------------------------------------------------------------------------------------------------- MONTHLY
 		
 		col = new VideoCollection('Best of Modarchive: Monthly')
