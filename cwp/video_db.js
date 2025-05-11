@@ -613,6 +613,11 @@ class VideoDb {
 		col = new VideoCollection('Best of Modarchive: Monthly')
 		this.collections.push(col)
 		
+		vid = new Video('Best of Modarchive April 2025', 'boma-2025-04', '_PVk_SrAGRE')
+		col.add(vid)
+		vid.add('00:00', "SoDa7 - Skywards (part of the track)")
+		vid.add('03:14', "Dubmood - Razor 1911 D Cracktro 01 music")
+		
 		vid = new Video('Best of Modarchive February 2025', 'boma-2025-02', 'Z-Xw3oiJYIY')
 		col.add(vid)
 		vid.add('00:00', "wild kitten (orig. by Atsuyoshi Isemura)")
