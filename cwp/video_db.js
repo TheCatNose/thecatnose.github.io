@@ -613,6 +613,10 @@ class VideoDb {
 		col = new VideoCollection('Best of Modarchive: Monthly')
 		this.collections.push(col)
 		
+		vid = new Video('Best of Modarchive May 2025', 'boma-2025-05', 'UVINeL9epEI')
+		col.add(vid)
+		vid.add('00:00', "enacostione - funky girl")
+		
 		vid = new Video('Best of Modarchive April 2025', 'boma-2025-04', '_PVk_SrAGRE')
 		col.add(vid)
 		vid.add('00:00', "SoDa7 - Skywards (part of the track)")
