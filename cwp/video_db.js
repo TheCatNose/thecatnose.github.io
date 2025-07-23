@@ -608,6 +608,26 @@ class VideoDb {
 		vid.add('23:41', 'zalza and floppi - snowman')
 		vid.add('25:40', 'malmen - flowers')
 		
+		vid = new Video('Best of Modarchive 2008', 'boma-2008', 'WGLiohU8Cew')
+		col.add(vid)
+		vid.add('00:00', 'cerror - ode 2 maktone')
+		vid.add('01:13', 'Starbuck - little secret')
+		vid.add('02:26', 'Starbuck - Sunrise')
+		vid.add('03:39', 'chromag - the prophecy')
+		vid.add('05:10', 'slam - synthetic reality')
+		vid.add('06:53', 'crome - nova superb')
+		vid.add('09:01', 'JazzCat - Enchanted Friday Nights')
+		vid.add('13:34', 'loonie - wogo')
+		vid.add('15:03', 'pink - extra')
+		vid.add('17:22', 'cerror - Atari Close Call 3')
+		vid.add('18:44', 'radix - rainy summerdays')
+		vid.add('21:21', 'radix - you & me')
+		vid.add('22:39', 'loonie - little baby asteroid')
+		vid.add('25:37', 'loonie - permobiloffer')
+		vid.add('27:07', 'JazzCat - Electric City')
+		vid.add('31:17', 'loonie - tandemluftballong')
+		vid.add('32:53', 'ko0x and Alpha C - march of the ants')
+		
 		// ---------------------------------------------------------------------------------------------------- MONTHLY
 		
 		col = new VideoCollection('Best of Modarchive: Monthly')
