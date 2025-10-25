@@ -632,7 +632,12 @@ class VideoDb {
 		
 		col = new VideoCollection('Best of Modarchive: Monthly')
 		this.collections.push(col)
-		
+
+		vid = new Video('Best of modarchive September 2025', 'boma-2025-09', 'Ig0q5yqj98c')
+		col.add(vid)
+		vid.add('00:00', 'HBoloid - YO-KAI Disco')
+		vid.add('01:39', "Cyborg Jeff - Planer n'est pas jouer 2k")
+
 		vid = new Video('Best of Modarchive August 2025', 'boma-2025-08', 'qm_FwyySv4Y')
 		col.add(vid)
 		vid.add('00:00', 'Ray Hamilton - Path to the Will')
