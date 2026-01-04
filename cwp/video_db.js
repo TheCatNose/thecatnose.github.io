@@ -380,7 +380,6 @@ class VideoDb {
 		vid.add('03:42:42', "Dubmood + Zabutom - Rez 1911 Cracktro#1")
 		vid.add('03:45:00', "cerror - blue")
 		
-		/*
 		vid = new Video('Best of Modarchive 2019', 'boma-2019', '3BwtfmARk68')
 		col.add(vid)
 		vid.add('00:00:00', "aix - plastic pop 2")
@@ -457,7 +456,6 @@ class VideoDb {
 		vid.add('03:03:15', "maak - Melancholy on Monday")
 		vid.add('03:08:19', "Roz - Shattered again")
 		vid.add('03:11:55', "Xemogasa - Sapphire eyes")
-		*/
 		
 		vid = new Video('Best of Modarchive 2018', 'boma-2018', 'ESYo3lQIFl0')
 		col.add(vid)
