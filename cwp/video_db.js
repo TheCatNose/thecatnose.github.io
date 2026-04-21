@@ -668,6 +668,13 @@ class VideoDb {
 		vid.add('01:16:55', 'malmen - flowers')
 		vid.add('01:19:46', 'zabutom - zeta force level 2')
 		vid.add('01:20:55', 'radix - rymdlego')
+
+		vid = new Video('Best of Modarchive 2006', 'boma-2006', 'O_LefxtKKPI')
+		col.add(vid)
+		vid.add('00:00', 'Doh - Thermostat 7')
+		vid.add('02:29', 'JosSs - 10240 bites')
+		vid.add('04:29', 'lamb - in your arms')
+		vid.add('05:31', 'Funky Fish & raina - artificial sweetener')
 		
 		// ---------------------------------------------------------------------------------------------------- MONTHLY
 		
