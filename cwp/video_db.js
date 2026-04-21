@@ -674,6 +674,10 @@ class VideoDb {
 		col = new VideoCollection('Best of Modarchive: Monthly')
 		this.collections.push(col)
 
+		vid = new Video('Best of modarchive January 2026', 'boma-2026-01', 'DY0VmPq5cnA')
+		col.add(vid)
+		vid.add('00:00', 'Dippy - diskmag dance (opl2 mix)')
+
 		vid = new Video('Best of modarchive November 2025', 'boma-2025-11', 'Udp0zgJqFsg')
 		col.add(vid)
 		vid.add('00:00', 'Feverdream - World In A Bottle')
