@@ -777,6 +777,11 @@ class VideoDb {
 		col = new VideoCollection('Best of Modarchive: Monthly')
 		this.collections.push(col)
 
+		vid = new Video('Best of modarchive May 2026', 'boma-2026-05', 'QLkiG0bzESU')
+		col.add(vid)
+		vid.add('00:00', 'Ray Hamilton - Egg Adventure, Snow (cover)')
+		vid.add('01:30', 'Ray Hamilton - Glitch Goblin, St 2')
+
 		vid = new Video('Best of modarchive January 2026', 'boma-2026-01', 'DY0VmPq5cnA')
 		col.add(vid)
 		vid.add('00:00', 'Dippy - diskmag dance (opl2 mix)')
