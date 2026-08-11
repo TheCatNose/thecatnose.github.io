@@ -772,6 +772,20 @@ class VideoDb {
 		vid.add('02:21:14', 'captain - beyond music')
 		vid.add('02:25:42', 'zabutom & dubmood - Songs from the Cell')
 		
+		vid = new Video('Best of Modarchive 2003', 'boma-2003', '-xDkpUnFk6U')
+		col.add(vid)
+		vid.add('00:00', 'emax - delicate 0ooz!')
+		vid.add('02:30', 'malmen - unicorn glade')
+		vid.add('03:37', 'karlos - i want sleep!')
+		vid.add('05:30', 'malmen - a perfect world')
+		vid.add('07:49', 'floppi - dreamchip megamix II')
+		vid.add('37:48', 'radix - little adventure')
+		vid.add('39:02', 'jazz - 6581-mycopcar')
+		vid.add('40:22', 'floppi and zalza - snowballs with attitude')
+		vid.add('41:42', 'dubmood and bliss - RF chip #001')
+		vid.add('43:34', 'malmen - plofs')
+		vid.add('44:57', 'chavez - ninja bolognese')
+		
 		// ---------------------------------------------------------------------------------------------------- MONTHLY
 		
 		col = new VideoCollection('Best of Modarchive: Monthly')
