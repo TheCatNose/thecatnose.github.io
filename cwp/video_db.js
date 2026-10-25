@@ -808,6 +808,19 @@ class VideoDb {
 		vid.add('45:31', 'radix - paul the penguin')
 		vid.add('47:25', 'Dubmood & Stalker - The Drunk RazorGirl')
 		
+		vid = new Video('Best of Modarchive 2001', 'boma-2001', 'fMcodmZLVzU')
+		col.add(vid)
+		vid.add('00:00', 'stalker - Form reser bort')
+		vid.add('01:34', 'doh - bob le cintre')
+		vid.add('03:23', 'doh - thermostat 7')
+		vid.add('05:51', 'lesnik - crackme 8')
+		vid.add('07:10', 'lesnik - hot dogs')
+		vid.add('08:45', 'Felix Lindgren - Dr Wily')
+		vid.add('10:08', 'Purple Motion - Hispeed mainmenu v2.01')
+		vid.add('13:39', 'reed - jazzberry juice')
+		vid.add('17:05', 'lesnik - dont be afraid of me')
+		vid.add('18:18', 'Purple Motion - Death Rally Track 1 "hispeed"')
+		
 		// ---------------------------------------------------------------------------------------------------- MONTHLY
 		
 		col = new VideoCollection('Best of Modarchive: Monthly')
